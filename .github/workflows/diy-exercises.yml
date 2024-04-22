@@ -44,7 +44,7 @@ jobs:
   #       run: pytest 02_devops_fundamentals/ci_cd/terraform-exercise-3/unittests/test.py --cov
 
   #ex 2a
-   unit_tests:
+  unit_tests:
     runs-on: self-hosted
    
     steps:
