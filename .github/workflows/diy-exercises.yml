@@ -37,7 +37,7 @@ jobs:
         
   new_job:
     runs-on: self-hosted
-    needs: week_job
+    needs: greeting_job
     steps: 
       - name: New Job
         run: pytest 02_devops_fundamentals/ci_cd/terraform-exercise-3/unittests/test.py --cov
