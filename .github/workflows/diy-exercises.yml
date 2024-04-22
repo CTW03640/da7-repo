@@ -6,6 +6,7 @@ on:
 
 env:
   DAY_OF_WEEK: Monday
+  WEEK_JOB: Something
 
 jobs:
   greeting_job:
@@ -13,8 +14,21 @@ jobs:
     env:
       GREETING: Hello
     steps:
-      - name: "Say 'Hello Data Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $GITHUB_ACTOR!'"
+      - name: "Say 'Hello Data Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm <MY_NAME>'"
         run: echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $GITHUB_ACTOR"
         env:
           ACADEMY_TYPE: Data
+
+  week_job:
+    runs-on: self-hosted
+    env: 
+      WEEK_JOB: Something
+    needs: greeting_job
+    steps:
+      - name: "Create connection between jobs"
+        run: echo "I'm a new job, and I'm connected to greeting_job"
+        
+
+
+
 
