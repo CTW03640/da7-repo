@@ -26,7 +26,7 @@ jobs:
     needs: greeting_job
     steps:
       - name: "Create connection between jobs"
-        run: checkov -d ./S
+        run: checkov -d ./
         #echo "I'm a new job, and I'm connected to greeting_job"
         
 
