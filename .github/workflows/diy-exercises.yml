@@ -19,19 +19,19 @@ jobs:
         env:
           ACADEMY_TYPE: Data
 
-  week_job:
-    runs-on: self-hosted
-    env: 
-      WEEK_JOB: Something
-    needs: greeting_job
-    steps:
-      - name: Checkov Checkout
-        uses: actions/checkout@v3
+  # week_job:
+  #   runs-on: self-hosted
+  #   env: 
+  #     WEEK_JOB: Something
+  #   needs: greeting_job
+  #   steps:
+  #     - name: Checkov Checkout
+  #       uses: actions/checkout@v3
 
-      - name: Checkov GitHub Action
-        uses: bridgecrewio/checkov-action@v12
-        with:
-          directory: 02_devops_fundamentals/ci_cd/terraform-exercise-3a
+  #     - name: Checkov GitHub Action
+  #       uses: bridgecrewio/checkov-action@v12
+  #       with:
+  #         directory: 02_devops_fundamentals/ci_cd/terraform-exercise-3a
         
         #echo "I'm a new job, and I'm connected to greeting_job"
         
