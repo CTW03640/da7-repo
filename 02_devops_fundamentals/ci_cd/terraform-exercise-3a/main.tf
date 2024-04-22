@@ -17,9 +17,9 @@ resource "aws_iam_policy" "lambda_policy" {
       {
         Effect = "Allow"
         Action = [
-          "*"
+          "s3:*",
         ]
-        Resource = ["*"]
+        Resource = [data.aws_s3_bucket.your_bucket.arn]
       }
     ]
   })
