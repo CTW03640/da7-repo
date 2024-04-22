@@ -25,8 +25,14 @@ jobs:
       WEEK_JOB: Something
     needs: greeting_job
     steps:
-      - name: "Create connection between jobs"
-        run: checkov -d ./
+      - name: Checkov Checkout
+        uses: actions/checkout@v3
+
+      - name: Checkov GitHub Action
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: 02_devops_fundamentals/ci_cd/terraform-exercise-3a​
+        
         #echo "I'm a new job, and I'm connected to greeting_job"
         
 
