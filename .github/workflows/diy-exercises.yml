@@ -34,7 +34,7 @@ jobs:
           directory: 02_devops_fundamentals/ci_cd/terraform-exercise-3a
         
         #echo "I'm a new job, and I'm connected to greeting_job"
-        
+        .
   # new_job:
   #   runs-on: self-hosted
   #   needs: greeting_job
