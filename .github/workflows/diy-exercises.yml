@@ -31,10 +31,15 @@ jobs:
       - name: Checkov GitHub Action
         uses: bridgecrewio/checkov-action@v12
         with:
-          file: 02_devops_fundamentals/ci_cd/terraform-exercise-3a
+          directory: 02_devops_fundamentals/ci_cd/terraform-exercise-3a
         
         #echo "I'm a new job, and I'm connected to greeting_job"
         
+    new_job:
+      runs-on: self-hosted
+      needs: week_job
+      steps: 
+        - run: pytest 02_devops_fundamentals/ci_cd/terraform-exercise-3/unittests/test.py --cov
 
 
 
