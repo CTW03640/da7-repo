@@ -36,12 +36,31 @@ jobs:
         
         #echo "I'm a new job, and I'm connected to greeting_job"
         #.
-  new_job:
-    runs-on: self-hosted
-    steps: 
-      - name: New Job
-        run: pytest 02_devops_fundamentals/ci_cd/terraform-exercise-3/unittests/test.py --cov
+  #ex. 2a
+  # new_job:
+  #   runs-on: self-hosted
+  #   steps: 
+  #     - name: New Job
+  #       run: pytest 02_devops_fundamentals/ci_cd/terraform-exercise-3/unittests/test.py --cov
 
+  #ex 2a
+   unit_tests:
+    runs-on: self-hosted
+   
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+     
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+ 
+      - name: Install dependencies
+        run: pip install pytest pytest-cov
+     
+      - name: Run pytest
+        run: pytest 02_devops_fundamentals/ci_cd/terraform-exercise-3/unittests/test.py --cov
 
 
 
